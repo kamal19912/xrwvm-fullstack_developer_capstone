@@ -13,6 +13,8 @@ from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 import logging
 import json
+import response
+import context
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
@@ -51,7 +53,6 @@ def logout_request(request):
 @csrf_exempt
 def registration(request):
     context = {}
-
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
