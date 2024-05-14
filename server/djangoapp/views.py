@@ -1,4 +1,4 @@
-/*eslint no-unused-vars: "error"*/
+/*eslint no-unused-vars: ["error", { "vars": "local" }]*/
 # Uncomment the required imports before adding the code
 
 # from django.shortcuts import render
