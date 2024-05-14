@@ -46,7 +46,7 @@ def logout_request(request):
     data = {"userName": ""}
     return JsonResponse(data)
 
-// eslint-disable no-unused-vars
+
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
@@ -81,7 +81,7 @@ def registration(request):
     else:
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
-// eslint-disable no-unused-vars
+
 
 # Update the `get_dealerships` render list of dealerships
 # all by default, particular state if state is passed
