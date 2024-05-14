@@ -1,3 +1,4 @@
+/*eslint no-unused-vars: "error"*/
 # Uncomment the required imports before adding the code
 
 # from django.shortcuts import render
