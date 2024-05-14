@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 # Uncomment the required imports before adding the code
 
 # from django.shortcuts import render
@@ -46,7 +47,7 @@ def logout_request(request):
     data = {"userName": ""}
     return JsonResponse(data)
 
-
+/* eslint-disable no-unused-vars */
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
@@ -81,7 +82,7 @@ def registration(request):
     else:
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
-
+/* eslint-disable no-unused-vars */
 
 # Update the `get_dealerships` render list of dealerships
 # all by default, particular state if state is passed
@@ -120,7 +121,7 @@ def get_dealer_details(request, dealer_id):
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
 
-
+/* eslint-disable no-unused-vars */
 # Create a `add_review` view to submit a review
 def add_review(request):
     if (request.user.is_anonymous is False):
@@ -133,7 +134,7 @@ def add_review(request):
                                  "message": "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
-
+/* eslint-disable no-unused-vars */
 
 # Create a `get_cars` view to submit a review
 def get_cars(request):
