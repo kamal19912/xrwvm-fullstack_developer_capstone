@@ -13,8 +13,6 @@ from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 import logging
 import json
-import response
-import context
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
@@ -53,6 +51,7 @@ def logout_request(request):
 @csrf_exempt
 def registration(request):
     context = {}
+
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
@@ -65,7 +64,7 @@ def registration(request):
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
-    except Exception:
+    except:
         # If not, simply log this is a new user
         logger.debug("{} is new user".format(username))
 
@@ -130,7 +129,7 @@ def add_review(request):
         try:
             response = post_review(data)
             return JsonResponse({"status": 200})
-        except Exception:
+        except:
             return JsonResponse({"status": 401,
                                  "message": "Error in posting review"})
     else:
